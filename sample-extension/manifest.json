@@ -1,0 +1,45 @@
+{
+  "short_name": "web3-tester",
+  "manifest_version": 3,
+  "author": "https://metamask.io",
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "windows": "Alt+Shift+M",
+        "mac": "Alt+Shift+M",
+        "chromeos": "Alt+Shift+M",
+        "linux": "Alt+Shift+M"
+      }
+    }
+  },
+  "icons": {
+    "16": "images/icon-16.png",
+    "128": "images/icon-128.png"
+  },
+
+  "action": {
+    "default_icon": {
+      "19": "images/icon-19.png",
+      "38": "images/icon-38.png"
+    },
+    "default_title": "MetaMask",
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": [],
+  "externally_connectable": {
+    "matches": ["https://metamask.io/*"],
+    "ids": ["*"]
+  },
+  "name": "Github Contribution Badges",
+  "version": "0.0.1",
+  "description": "Mints NFTs for making Github Contributions",
+  "content_scripts": [
+    {
+      "css": ["badges.css"],
+      "js": ["badges.js"],
+      "matches": ["https://github.com/*"]
+    }
+  ],
+  "permissions": ["storage", "contextMenus", "activeTab"],
+  "host_permissions": ["https://github.com/"]
+}
